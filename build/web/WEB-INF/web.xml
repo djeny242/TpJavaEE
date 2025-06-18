@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping> 
+      
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+  <!-- si une exception non gérer survient , l'utilisateur est diriger vers la page error.jsp--> 
+   <error-page>
+      <exception-type>java.lang.Exception</exception-type>
+      <location>/error.jsp</location>
+   </error-page>
+
+
+<error-page>
+    <erroe-code>404</erroe-code>
+    <location>/error.jsp</location>
+</error-page>
+</web-app>
